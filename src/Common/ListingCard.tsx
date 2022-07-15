@@ -19,13 +19,21 @@ export default function ListingCard({ listing }: ListingCardProps) {
     };
 
     return (
-        <Box className="mx-auto" maxW="sm" minH="xs" borderWidth="1px" borderRadius="lg" overflow="hidden">
-            <Image maxH="200px" minW="full" src={listing.images[0].url} alt={listing.name} />
+        <Box className="mx-auto" maxW="sm" minH="xs" borderRadius="lg" overflow="hidden">
+            <Image
+                minH="250px"
+                minW="full"
+                objectFit="cover"
+                borderRadius="lg"
+                src={listing.images[0].url}
+                alt={listing.name}
+            />
 
-            <Box p="6">
+            <Box p="6" px={0}>
                 <Box display="flex" alignItems="baseline">
-                    <Badge borderRadius="full" px="2" colorScheme="teal">
-                        New
+                    <Badge borderRadius="full" px="2" bgColor={'#FF4471'} textColor="white">
+                        {/* @ts-ignore */}
+                        {listing?.discount ? listing?.discount : listing.type}
                     </Badge>
                     <Box
                         color="gray.500"
@@ -35,19 +43,27 @@ export default function ListingCard({ listing }: ListingCardProps) {
                         textTransform="uppercase"
                         ml="2"
                     >
-                        {property.beds} beds &bull; {property.baths} baths
+                        {/* {listing.type} */}
+                        {listing.amenities &&
+                            listing.amenities.length > 0 &&
+                            [...listing.amenities.slice(0, 2)].map((amenity, i) => (
+                                <span key={amenity + i}>&bull;{amenity}</span>
+                            ))}
                     </Box>
                 </Box>
 
                 <Box mt="1" fontWeight="semibold" as="h4" lineHeight="tight" noOfLines={1}>
                     {listing.name}
                 </Box>
+                <Box mt="1" fontWeight="normal" as="h5" lineHeight="tight" noOfLines={1}>
+                    {listing.address}
+                </Box>
 
                 <Box>
                     <Box as="span" color="gray.600" fontSize="sm">
                         ₹
                     </Box>
-                    {listing.price}
+                    {listing.price}/night
                 </Box>
 
                 <Box display="flex" mt="2" alignItems="center">

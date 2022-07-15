@@ -11,27 +11,27 @@ export default function Header() {
                 y: [-50, 0],
             }}
             exit={{ opacity: 0 }}
-            className=" min-w-full  py-10 px-5 bg-black text-white dark:bg-white dark:text-black grid grid-cols-3 border-b-2 border-yellow-500"
+            className=" min-w-full  py-6 px-5 bg-white text-black hidden sm:grid grid-cols-3 border-b-2 border-yellow-500 mb-5 "
         >
             <div className="left text-center my-auto hidden sm:block">
-                <nav className="flex items-center justify-end gap-5  text-lg font-bold ">
+                <nav className="flex items-center justify-end gap-10 text-lg font-bold ">
                     <Link
                         to="/"
-                        className="text-white dark:text-black hover:underline underline-offset-8 transition-all"
+                        className="text-black dark:text-black hover:underline underline-offset-8 transition-all"
                     >
-                        Home
+                        Discover
                     </Link>
                     <Link
                         to="/about"
-                        className="text-white dark:text-black hover:underline underline-offset-8 transition-all"
+                        className="text-black dark:text-black hover:underline underline-offset-8 transition-all"
                     >
-                        About
+                        Popular
                     </Link>
                     <Link
                         to="/contact"
-                        className="text-white dark:text-black hover:underline underline-offset-8 transition-all"
+                        className="text-black dark:text-black hover:underline underline-offset-8 transition-all"
                     >
-                        Contact
+                        Tours
                     </Link>
                 </nav>
             </div>
@@ -47,32 +47,32 @@ export default function Header() {
                         scale: 1.1,
                         color: '#eab308',
                     }}
-                    className="text-5xl font-extrabold flex items-center justify-center "
+                    className="text-3xl font-extrabold flex items-center justify-center "
                 >
-                    <Link to="/" className="text-white">
+                    <Link to="/" className="text-black">
                         HotelX
                     </Link>
                 </motion.h1>
             </div>
             <div className="right text-center my-auto hidden sm:block">
-                <nav className="flex items-center justify-start gap-5  text-lg font-bold ">
+                <nav className="flex items-center justify-start gap-10 text-lg font-bold ">
                     <Link
                         to="/"
-                        className="text-white dark:text-black hover:underline underline-offset-8 transition-all"
+                        className="text-black dark:text-black hover:underline underline-offset-8 transition-all"
                     >
-                        Home
+                        About
                     </Link>
                     <Link
                         to="/about"
-                        className="text-white dark:text-black hover:underline underline-offset-8 transition-all"
+                        className="text-black dark:text-black hover:underline underline-offset-8 transition-all"
                     >
-                        About
+                        Contact
                     </Link>
                     <Link
                         to="/contact"
                         className="text-white dark:text-black hover:underline underline-offset-8 transition-all"
                     >
-                        Contact
+                        Blog
                     </Link>
                 </nav>
             </div>
